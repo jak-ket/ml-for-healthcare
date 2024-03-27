@@ -63,3 +63,4 @@
 *.max
 archive/*
 *.pth
+*.pyc
