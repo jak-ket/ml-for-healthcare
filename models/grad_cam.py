@@ -1,4 +1,5 @@
 import cv2
+from matplotlib import pyplot as plt
 import torch
 import torch.nn as nn
 import numpy as np 
@@ -84,3 +85,31 @@ def _get_activations(grad_cam : CNN_grad_cam, img, pooled_gradients):
     for i in range(activations.shape[1]):
         activations[:, i, :, :] *= pooled_gradients[i]
     return activations
+
+
+def display_datasets_heatmap(test_grad_cam, dataloader, n=2, classes=('NORMAL','PNEUMONIA')):
+    # calculate the number of rows and columns for subplots
+    num_rows = 2
+    num_cols = n // 2
+    
+    # create the subplots with reduced vertical spacing
+    fig, axs = plt.subplots(num_rows, num_cols, figsize=(20, 7), gridspec_kw={'wspace': .5, 'hspace': 0.5})
+    
+    for i, (img, label) in enumerate(dataloader):
+        if i == n:
+            break
+        heatmap = heatmap_grad_cam(test_grad_cam, img)
+        joint_img = heatmap_in_image(img=img, heatmap=heatmap, threshold=0.6, mixture=0.9)
+        #print the prediction
+        test_grad_cam.eval()
+        print(test_grad_cam(img).argmax(dim=1).item(), label.item())
+        # calculate the row and column indices for the current subplot
+        row_idx = i // num_cols
+        col_idx = i % num_cols
+        
+        # plot the image in the corresponding subplot
+        axs[row_idx, col_idx].imshow(joint_img)
+        axs[row_idx, col_idx].set_title(classes[label])
+        axs[row_idx, col_idx].axis('off')
+        
+    plt.show()
