@@ -87,7 +87,7 @@ def _get_activations(grad_cam : CNN_grad_cam, img, pooled_gradients):
     return activations
 
 
-def display_datasets_heatmap(test_grad_cam, dataloader, n=2, classes=('NORMAL','PNEUMONIA')):
+def display_datasets_heatmap(test_grad_cam, dataloader,threshold=0.6, mixture=0.9, n=2, classes=('NORMAL','PNEUMONIA')):
     # calculate the number of rows and columns for subplots
     num_rows = 2
     num_cols = n // 2
@@ -99,7 +99,7 @@ def display_datasets_heatmap(test_grad_cam, dataloader, n=2, classes=('NORMAL','
         if i == n:
             break
         heatmap = heatmap_grad_cam(test_grad_cam, img)
-        joint_img = heatmap_in_image(img=img, heatmap=heatmap, threshold=0.6, mixture=0.9)
+        joint_img = heatmap_in_image(img=img, heatmap=heatmap, threshold=threshold, mixture=mixture)
         #print the prediction
         test_grad_cam.eval()
         print(test_grad_cam(img).argmax(dim=1).item(), label.item())
