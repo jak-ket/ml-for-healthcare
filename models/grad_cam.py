@@ -48,8 +48,10 @@ def heatmap_grad_cam(grad_cam : CNN_grad_cam, img) -> torch.Tensor:
     #construct heatmap
     heatmap = torch.mean(activations, dim=1).squeeze()
     # relu on heatmap
-    heatmap = np.maximum(heatmap, 0)
-    heatmap /= torch.max(heatmap)
+    #heatmap = np.maximum(heatmap, 0) # removed ReLu function because we only have two classes
+    #catch div by zero
+    if torch.max(heatmap) != 0:
+        heatmap /= torch.abs(torch.max(heatmap))
     return heatmap
 
 def heatmap_in_image(img, heatmap, threshold, mixture, mn, mx) -> np.array:
@@ -71,7 +73,6 @@ def heatmap_in_image(img, heatmap, threshold, mixture, mn, mx) -> np.array:
     # Blend the heatmap with the original image
   
     superimposed_img = (1 - image_weight) * heatmap_plotting + image_weight * img_clipped
-    #superimposed_img = cv2.normalize(superimposed_img, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
     return superimposed_img
 
 def _get_gradiants(grad_cam : CNN_grad_cam, img):
@@ -91,6 +92,7 @@ def _get_activations(grad_cam : CNN_grad_cam, img, pooled_gradients):
 
 def display_datasets_heatmap(test_grad_cam, dataloader,threshold=0.6, mixture=0.9, n=2, classes=('NORMAL','PNEUMONIA')):
     # calculate the number of rows and columns for subplots
+    n = len(dataloader.dataset)
     num_rows = 2
     num_cols = n // 2
     
