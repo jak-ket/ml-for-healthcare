@@ -48,7 +48,7 @@ def heatmap_grad_cam(grad_cam : CNN_grad_cam, img) -> torch.Tensor:
     #construct heatmap
     heatmap = torch.mean(activations, dim=1).squeeze()
     # relu on heatmap
-    #heatmap = np.maximum(heatmap, 0) # removed ReLu function because we only have two classes
+    #heatmap = np.maximum(heatmap, 0) # removed for now ReLu function because we only have two classes for one class no characterisics are in the image
     #catch div by zero
     if torch.max(heatmap) != 0:
         heatmap /= torch.abs(torch.max(heatmap))
@@ -68,7 +68,6 @@ def heatmap_in_image(img, heatmap, threshold, mixture, mn, mx) -> np.array:
     # Apply a colormap to the heatmap
     heatmap_plotting = cv2.applyColorMap(heatmap_plotting, cv2.COLORMAP_HSV)/255
     img_clipped = np.clip(img, 0, 1)
-   
     image_weight = mixture
     # Blend the heatmap with the original image
   
@@ -77,7 +76,7 @@ def heatmap_in_image(img, heatmap, threshold, mixture, mn, mx) -> np.array:
 
 def _get_gradiants(grad_cam : CNN_grad_cam, img):
     pred = grad_cam(img)
-    #calculate gradients for most likely class  
+    #calculate gradients for most likely class 
     pred[:,pred.argmax(dim=1)].backward()
     gradiants = grad_cam.get_activations_gradient()
     return gradiants
@@ -90,7 +89,7 @@ def _get_activations(grad_cam : CNN_grad_cam, img, pooled_gradients):
     return activations
 
 
-def display_datasets_heatmap(test_grad_cam, dataloader,threshold=0.6, mixture=0.9, n=2, classes=('NORMAL','PNEUMONIA')):
+def display_datasets_heatmap(test_grad_cam, dataloader,threshold=0.6, mixture=0.9, classes=('NORMAL','PNEUMONIA')):
     # calculate the number of rows and columns for subplots
     n = len(dataloader.dataset)
     num_rows = 2
@@ -116,7 +115,8 @@ def display_datasets_heatmap(test_grad_cam, dataloader,threshold=0.6, mixture=0.
         axs[row_idx, col_idx].imshow(joint_img) 
         axs[row_idx, col_idx].set_title(classes[label])
         axs[row_idx, col_idx].axis('off')
-        
+        break
+    
     plt.show()
 # Blend the heatmap with the original image
 
