@@ -70,7 +70,6 @@ def heatmap_in_image(img, heatmap, threshold, mixture, mn, mx) -> np.array:
     img_clipped = np.clip(img, 0, 1)
     image_weight = mixture
     # Blend the heatmap with the original image
-  
     superimposed_img = (1 - image_weight) * heatmap_plotting + image_weight * img_clipped
     return superimposed_img
 
@@ -115,8 +114,7 @@ def display_datasets_heatmap(test_grad_cam, dataloader,threshold=0.6, mixture=0.
         axs[row_idx, col_idx].imshow(joint_img) 
         axs[row_idx, col_idx].set_title(classes[label])
         axs[row_idx, col_idx].axis('off')
-        break
-    
+        
     plt.show()
 # Blend the heatmap with the original image
 
