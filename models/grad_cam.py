@@ -48,7 +48,7 @@ def heatmap_grad_cam(grad_cam : CNN_grad_cam, img) -> torch.Tensor:
     #construct heatmap
     heatmap = torch.mean(activations, dim=1).squeeze()
     # relu on heatmap
-    #heatmap = np.maximum(heatmap, 0) # removed for now ReLu function because we only have two classes for one class no characterisics are in the image
+    heatmap = np.maximum(heatmap, 0) 
     #catch div by zero
     if torch.max(heatmap) != 0:
         heatmap /= torch.abs(torch.max(heatmap))
@@ -78,7 +78,7 @@ def _get_gradiants(grad_cam : CNN_grad_cam, img):
     #calculate gradients for most likely class 
     pred[:,pred.argmax(dim=1)].backward()
     gradiants = grad_cam.get_activations_gradient()
-    return gradiants
+    return torch.abs(gradiants)
 
 
 def _get_activations(grad_cam : CNN_grad_cam, img, pooled_gradients):
