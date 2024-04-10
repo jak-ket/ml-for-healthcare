@@ -78,7 +78,7 @@ def _get_gradiants(grad_cam : CNN_grad_cam, img):
     #calculate gradients for most likely class 
     pred[:,pred.argmax(dim=1)].backward()
     gradiants = grad_cam.get_activations_gradient()
-    return torch.abs(gradiants)
+    return gradiants
 
 
 def _get_activations(grad_cam : CNN_grad_cam, img, pooled_gradients):
