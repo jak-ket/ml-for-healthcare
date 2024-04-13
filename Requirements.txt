@@ -1,0 +1,14 @@
+Requirements for Grad-Cam and its permutation test:
+
+You need to have the following libraries and functions:
+
+torch
+torchvision
+torchvision.transforms
+from torch.utils import data
+cv2
+matplotlib 
+numpy
+
+Additionally, you need to have the functions we defined for Grad-Cam that are found in the models/grad_cam.py file.
+
