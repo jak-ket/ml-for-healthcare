@@ -10,5 +10,5 @@ cv2
 matplotlib 
 numpy
 
-Additionally, you need to have the functions we defined for Grad-Cam that are found in the models/grad_cam.py file.
+Additionally, you need to have the functions we defined for Grad-Cam that are found in the 'grad_cam.py' file.
 
