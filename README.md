@@ -2,7 +2,7 @@
 The tasks we worked on are described in `tasks.pdf`, our answers in `report.pdf`. All packages required to run the code are contained in `environment.yml`. 
 
 ## Part 1: Heart Disease Prediction Dataset
-All code for this part is included in `heart_disease_prediction.ipynb`, the data was provided via Moodle and the columns are described on [Kaggle](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data). The implementation of Neural Additive Models is contained in the folder `/nam` and taken from Google Research [github.com/lemeln/nam](https://github.com/lemeln/nam).
+All code for this part is included in `heart_disease_prediction.ipynb`, the data can be found under `data/heart_failure` and the columns are described on [Kaggle](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data). The implementation of Neural Additive Models is contained in the folder `/nam` and taken from Google Research [github.com/lemeln/nam](https://github.com/lemeln/nam).
 
 ## Part 2: Pneumonia Prediction Dataset
 
