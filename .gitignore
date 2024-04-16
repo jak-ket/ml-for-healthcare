@@ -1,3 +1,6 @@
+nam_old
+output
+*.pyc
 # JPEG
 *.jpg
 *.jpeg
