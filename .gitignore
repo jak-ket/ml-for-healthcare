@@ -67,3 +67,5 @@ output
 archive/*
 *.pth
 *.pyc
+
+*.csv
