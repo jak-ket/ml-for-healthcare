@@ -1,4 +1,4 @@
-# Interpretable and Explainable Classification for Medical Data
+# Project 1: Interpretable and Explainable Classification for Medical Data
 All packages required to run the code are contained in `environment.yml`. 
 
 ## Part 1: Heart Disease Prediction Dataset
@@ -15,3 +15,9 @@ The "CNN_grad_cam" class and all other functionality are defined in the `grad_ca
 
 ### Q5: Data Randomization Test
 For the permutation test for Grad-Cam in Q5, you need the `grad_cam_permutation_test.ipynb` file. This notebook builds on the permutated model and 10 test images. For all those two components, you can find the link to a polybox at the beginning of the notebook. Ensure the folder structure is correct so the models are correctly imported and the 'ImageFolder' assigns the labels correctly. Again, from the `grad_cam.py` file, you need the class "CNN_grad_cam" and the function display_datasets_heatmap to visualise the Grad-Cam saliency maps with the permuted model. In order the perform the data randomization test on Integrated Gradients, refer to `cnn_permuted.ipynb`. This mostly follows the structure of the Grad-Cam notebook using techniques and packages introduced in 2.3.
+
+# Project 2: Time Series and Representation Learning
+
+## Part 1: Supervised Learning on Time Series 
+
+## Part 2: Transfer and Representation Learning
