@@ -1,6 +1,4 @@
 time_series/data
-nam_old
-output
 *.pyc
 # JPEG
 *.jpg
