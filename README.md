@@ -26,6 +26,7 @@ ThePTBDiagnostic
 The folder structure is as follows:
 ### Q1: Exploratory Data Analysis, Q2: Classical machine learning methods
 All code for this part can be found in `eda1.ipynb` and `classic_ml1.ipynb`.
+
 ## Part 2: Transfer and Representation Learning
 
 ###  Q2: Representation Learning Model 
