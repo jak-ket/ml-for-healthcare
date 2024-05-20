@@ -1,6 +1,6 @@
+ All packages required to run the code are contained in `environment.yml`.  
 # Project 1: Interpretable and Explainable Classification for Medical Data
-All packages required to run the code are contained in `environment.yml`. 
-
+The code for this project is in the 'explainability' folder. The folder structure is as follows:
 ## Part 1: Heart Disease Prediction Dataset
 All code for this part is included in `heart_disease_prediction.ipynb`, the data and column descriptions can be found on [Kaggle](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data). The implementation of Neural Additive Models is contained in the folder `/nam` and taken from Google Research [github.com/lemeln/nam](https://github.com/lemeln/nam).
 
@@ -19,5 +19,18 @@ For the permutation test for Grad-Cam in Q5, you need the `grad_cam_permutation_
 # Project 2: Time Series and Representation Learning
 
 ## Part 1: Supervised Learning on Time Series 
-
+All code for this part is included in `time_series" folder. We use the following datasets:
+ThePTBDiagnostic 
+● MIT-BIH Arrhythmia Database (https://physionet.org/physiobank/database/mitdb/)
+● ECG Database (https://physionet.org/content/ptbdb/1.0.0/)
+The folder structure is as follows:
+### Q1: Exploratory Data Analysis, Q2: Classical machine learning methods
+All code for this part can be found in `eda1.ipynb` and `classic_ml1.ipynb`.
 ## Part 2: Transfer and Representation Learning
+
+###  Q2: Representation Learning Model 
+Our autoencoder model is defined in `models/encoder.py`. The training and evaluation is done in representation_learning.ipynb.
+
+### Q3: Visualising Learned Representations 
+Our code for the kulback-leibler divergence is found in `models/kl.py`
+The representations of the autoencoder are visualised in `viualize_encoder.ipynb`
