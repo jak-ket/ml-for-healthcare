@@ -29,8 +29,6 @@ The folder structure is as follows:
 ### Q1: Exploratory Data Analysis, Q2: Classical machine learning methods
 All code for this part can be found in `eda1.ipynb` and `classic_ml1.ipynb`.
 
-###  Q2: Representation Learning Model 
-Our autoencoder model is defined in `models/encoder.py`. The training and evaluation is done in representation_learning.ipynb.
 
 ### Q3: Recurrent Neural Networks
 Code to train RNN with LSTM can be found in `rnn.ipynb` and `rnn.py` contains model class and training function.
@@ -44,7 +42,9 @@ Code to train the Transformer and visualize the attention maps can be found in `
 
 ### Q1:
 
-### Q2:
+###  Q2: Representation Learning Model 
+Our autoencoder model is defined in `models/encoder.py`. The training and evaluation is done in `representation_learning.ipynb`.
+
 
 ### Q3: Visualising Learned Representations 
 Our code for the kulback-leibler divergence is found in `models/kl.py`
