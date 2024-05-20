@@ -34,22 +34,25 @@ All code for this part can be found in `eda1.ipynb` and `classic_ml1.ipynb`.
 
 
 ### Q3: Recurrent Neural Networks
-Code to train RNN with LSTM can be found in `rnn.ipynb` and `rnn.py` contains model class and training function.
+Code to train RNN with LSTM can be found in `rnn.ipynb` and `rnn.py` contains model class and training function. Code for the bidirectional LSTM can be found under `ts_bilstm.ipynb`. The model is under `models/bilstm.pth`.
 
-### Q4:
+### Q4: Convolutional Neural Network
+Code to train the two CNN models (vanilla and with residual blocks) can be found at `ts_cnn.ipynb`. The corresponding models are stored at `models/vanillacnn.pth` and `models/residualcnn.pth`.
 
 ### Q5: Attention and Transformers
 Code to train the Transformer and visualize the attention maps can be found in `transformer.ipynb`. The model classes and training function can be found in `transformer.py`.
 
 ## Part 2: Transfer and Representation Learning
 
-### Q1:
+### Q1: Supervised Model for Transfer
+Transfer learning for the CNN encoder is covered in the first half of the notebook `umap.ipynb`. We create the model `transfercnn.pth`. The embeddings are stored in the polybox under https://polybox.ethz.ch/index.php/s/bu0w5P5x9DHU86G
 
 ###  Q2: Representation Learning Model 
 Our autoencoder model is defined in `models/encoder.py`. The training and evaluation is done in `representation_learning.ipynb`.
 
 
 ### Q3: Visualising Learned Representations 
+Code for the UMAP representations for the CNN encoder can be found under `umap.ipynb`. 
 Our code for the kulback-leibler divergence is found in `models/kl.py`
 The representations of the autoencoder are visualised in `viualize_encoder.ipynb`
 
