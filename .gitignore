@@ -1,5 +1,4 @@
-nam_old
-output
+time_series/data
 *.pyc
 # JPEG
 *.jpg
@@ -67,3 +66,5 @@ output
 archive/*
 *.pth
 *.pyc
+
+*.csv

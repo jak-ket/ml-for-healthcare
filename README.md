@@ -1,6 +1,7 @@
-# Interpretable and Explainable Classification for Medical Data
-All packages required to run the code are contained in `environment.yml`. 
+All packages required to run the code are contained in `environment.yml`.  
 
+# Project 1: Interpretable and Explainable Classification for Medical Data
+The code for this project is in the 'explainability' folder. The folder structure is as follows:
 ## Part 1: Heart Disease Prediction Dataset
 All code for this part is included in `heart_disease_prediction.ipynb`, the data and column descriptions can be found on [Kaggle](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data). The implementation of Neural Additive Models is contained in the folder `/nam` and taken from Google Research [github.com/lemeln/nam](https://github.com/lemeln/nam).
 
@@ -15,3 +16,39 @@ The "CNN_grad_cam" class and all other functionality are defined in the `grad_ca
 
 ### Q5: Data Randomization Test
 For the permutation test for Grad-Cam in Q5, you need the `grad_cam_permutation_test.ipynb` file. This notebook builds on the permutated model and 10 test images. For all those two components, you can find the link to a polybox at the beginning of the notebook. Ensure the folder structure is correct so the models are correctly imported and the 'ImageFolder' assigns the labels correctly. Again, from the `grad_cam.py` file, you need the class "CNN_grad_cam" and the function display_datasets_heatmap to visualise the Grad-Cam saliency maps with the permuted model. In order the perform the data randomization test on Integrated Gradients, refer to `cnn_permuted.ipynb`. This mostly follows the structure of the Grad-Cam notebook using techniques and packages introduced in 2.3.
+
+# Project 2: Time Series and Representation Learning
+
+## Part 1: Supervised Learning on Time Series 
+All code for this part is included in `time_series" folder. We use the following datasets:
+ThePTBDiagnostic 
+● MIT-BIH Arrhythmia Database (https://physionet.org/physiobank/database/mitdb/)
+● ECG Database (https://physionet.org/content/ptbdb/1.0.0/)
+The folder structure is as follows:
+
+### Q1: Exploratory Data Analysis, Q2: Classical machine learning methods
+All code for this part can be found in `eda1.ipynb` and `classic_ml1.ipynb`.
+
+###  Q2: Representation Learning Model 
+Our autoencoder model is defined in `models/encoder.py`. The training and evaluation is done in representation_learning.ipynb.
+
+### Q3: Recurrent Neural Networks
+Code to train RNN with LSTM can be found in `rnn.ipynb` and `rnn.py` contains model class and training function.
+
+### Q4:
+
+### Q5: Attention and Transformers
+Code to train the Transformer and visualize the attention maps can be found in `transformer.ipynb`. The model classes and training function can be found in `transformer.py`.
+
+## Part 2: Transfer and Representation Learning
+
+### Q1:
+
+### Q2:
+
+### Q3: Visualising Learned Representations 
+Our code for the kulback-leibler divergence is found in `models/kl.py`
+The representations of the autoencoder are visualised in `viualize_encoder.ipynb`
+
+### Q4: Fine-tuning Strategies
+The notebook `fine_tuning_encoder_q1.ipynb` contains code for classic ML and MLP strategies using encoder from Q1 and `fine_tuning_encoder_q2.ipynb` using encoder from Q2 (Autoencoder). 
