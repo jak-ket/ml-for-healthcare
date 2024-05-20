@@ -22,8 +22,11 @@ For the permutation test for Grad-Cam in Q5, you need the `grad_cam_permutation_
 ## Part 1: Supervised Learning on Time Series 
 All code for this part is included in `time_series" folder. We use the following datasets:
 ThePTBDiagnostic 
+
 ● MIT-BIH Arrhythmia Database (https://physionet.org/physiobank/database/mitdb/)
+
 ● ECG Database (https://physionet.org/content/ptbdb/1.0.0/)
+
 The folder structure is as follows:
 
 ### Q1: Exploratory Data Analysis, Q2: Classical machine learning methods
